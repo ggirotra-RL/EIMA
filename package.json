@@ -1,0 +1,19 @@
+{
+  "name": "AngularJS_Authentication",
+  "version": "0.0.0",
+  "description": "AngularJS-Authentication",
+  "main": "app.js",
+  "author": {
+    "name": "srirangr",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "jwt-simple": "~0.2.0",
+    "mongoose": "^4.3.7",
+    "mysql": "^2.4.3",
+    "stylus": "*",
+    "underscore": "~1.6.0"
+  }
+}

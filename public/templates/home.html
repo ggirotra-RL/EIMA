@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+<head>		
+	<div ng-include="'templates/applicationNavs.html'"> </div>
+</head>
+
+<body>
+<div class="page-body">	
+	<div id="container">		
+		<div class="profile-panel">
+		    <h4>Welcome {{userInfo.userName}}</h4>
+		</div>		
+		<div class="search-panel">		
+			<input type="search" size="40" placeholder="Search here..." ng-model="search" id="search">	
+		</div>
+		<table id="showit" class="table table-striped table-bordered table-hover">
+			<tr>
+				<td>Name</td>
+				<td>Contact</td>
+				<td>Email</td>
+				<td>Passport</td>
+				<td>Passport Expiry</td>
+				<td>Visa Type</td>
+				<td>Visa Expiry</td>
+				<td>I94 Expiry</td>
+				<td>Petition Expiry</td>
+			</tr>		
+			<tr ng-repeat="data in emp_details | filter:search">
+				<td><label>{{data.name}}</label></td>
+				<td><label>{{data.contact}}</label></td>
+				<td><label>{{data.email}}</label></td>
+				<td><label>{{data.passport}}</label></td>
+				<td><date>{{data.passportExpires | date: 'MM/dd/yyyy'}}</date></td>
+				<td><label>{{data.visaType}}</label></td>
+				<td><date>{{data.visaExpires | date: 'MM/dd/yyyy'}}</date></td>
+				<td><date>{{data.I94Expires | date: 'MM/dd/yyyy'}}</date></td>
+				<td><date>{{data.petitionExpires | date: 'MM/dd/yyyy'}}</date></td>
+
+				<!-- <td><button id="downloadbutton"><a href="{{data.passport}}" target='_blank'></a></button></td> -->
+			</tr>
+		</table>	
+	</div>
+
+   </div>
+</body>	

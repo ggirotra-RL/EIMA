@@ -1,0 +1,149 @@
+
+<style>	
+	.add-employee-form {
+		margin-top:100px
+		width: 70%;
+	    clear: both;	
+	}
+
+/* 	.content {
+		width: 75%;
+		float: center;
+		margin: 2% 0% 0% 3%;
+	} */
+	
+	    .bs-example{
+    	margin: 20px;
+    }
+
+</style>
+<div ng-include="'templates/applicationNavs.html'"> </div>
+<div class="element" style="margin-top:100px;">
+    <div class="panel-group" id="newAccordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#newAccordion">
+                      Employee Information
+                    </a>
+                </h4>
+            </div>
+            <div id="profileChanges" class="panel-collapse collapse in">
+                <div class="panel-body">
+                   <form name="editForm" novalidate>
+						<div class="content">
+							<div class="row">
+								<div class="col-md-2">
+									<label for="fname">	Full Name:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="text" name="name" class="form-control" data-ng-model="employeeObj.name" required />
+									<span class="errorMessage" ng-show="editForm.name.$touched && editForm.name.$invalid">
+										Name is required
+									</span>
+								</div>
+							</div>							
+							<div class="row">
+								<div class="col-md-2">
+								   <label for="contactAdd">Contact Address</label>
+								</div>
+								<div class="col-md-10">
+									<input type="text" name="contact" class="form-control" data-ng-model="employeeObj.contact" required />
+									<span class="errorMessage" ng-show="editForm.contact.$touched && editForm.contact.$invalid">
+										Address is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-2">
+									<label for="emailId">Email Id:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="email" name="email" class="form-control" data-ng-model="employeeObj.email" required />
+									<span class="errorMessage" ng-show="editForm.email.$touched && editForm.email.$invalid">
+										Email Id is required
+									</span>
+								</div>
+							</div>							
+							<div class="row">
+								<div class="col-md-2">
+									<label for="passportNumber">Passport No:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="text" name="passport" class="form-control" data-ng-model="employeeObj.passport" required />
+									<span class="errorMessage" ng-show="editForm.passport.$touched && editForm.passport.$invalid">
+										Passport No. is required
+									</span>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-2">
+									<label for="passportExpiry">Passport Expiry Date:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="date" name="passportExpires" class="form-control" data-ng-model="employeeObj.passportExpires" placeholder="MM/DD/YYYY" required />
+									<span class="errorMessage" ng-show="editForm.passportExpires.$touched && editForm.passportExpires.$invalid">
+										Passport Expiry Date is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-2">
+									<label for="visaType">Visa Type:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="text" name="visaType" class="form-control" data-ng-model="employeeObj.visaType" required />
+									<span class="errorMessage" ng-show="editForm.visaType.$touched && editForm.visaType.$invalid">
+										Visa Type is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-2">
+									<label for="visaExpiry">Visa Expiry Date:</label>
+								</div>
+								<div class="col-md-10">
+									<input type="text" name="visaExpires" class="form-control" data-ng-model="employeeObj.visaExpires" required />
+									<span class="errorMessage" ng-show="editForm.visaExpires.$touched && editForm.visaExpires.$invalid">
+										Visa Expiry Date is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-2">
+									<label for="I94Expiry">	I94 Expiry Date</label>
+								</div>
+								<div class="col-md-10">
+									<input type="date" name="I94Expires" class="form-control" data-ng-model="employeeObj.I94Expires" required />
+									<span class="errorMessage" ng-show="editForm.I94Expires.$touched && editForm.I94Expires.$invalid">
+										I94 Expiry Date is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-2">
+									<label for="petitionExpiry">Petition Expiry Date</label>
+								</div>
+								<div class="col-md-10">
+									<input type="date" name="petitionExpires" class="form-control" data-ng-model="employeeObj.petitionExpires" required />
+									<span class="errorMessage" ng-show="editForm.petitionExpires.$touched && editForm.petitionExpires.$invalid">
+										Petition Expiry Date is required
+									</span>
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-primary" data-ng-click="saveEmployee()">
+											Save Details
+									</button>
+								</div>
+							</div>
+							<br />
+						</div>
+					</form>				
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
